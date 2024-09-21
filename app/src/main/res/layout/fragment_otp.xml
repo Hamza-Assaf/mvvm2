@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="HardcodedText">
+
+
+    <TextView
+        android:id="@+id/otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:text="OTP Verification"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/back_button"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/otp_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Enter the verification code we just sent on your \nemail address."
+        android:textColor="@color/darkGray"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/otp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="15dp"/>
+
+    <include layout="@layout/back_button"
+        android:id="@+id/back_button">
+
+
+
+    </include>
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otp_body"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp"
+        android:id="@+id/otp_code">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            app:cardCornerRadius="5dp"
+            android:id="@+id/digit_1_card"
+            android:backgroundTint="@color/lightgray"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/lightCyan"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/digit_1_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:boxBackgroundMode="none"
+                android:layout_margin="0dp"
+                android:padding="0dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/digit_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:imeOptions="actionNext" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <Space
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            app:cardCornerRadius="5dp"
+            android:id="@+id/digit_2_card"
+            android:backgroundTint="@color/lightgray"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/lightCyan">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/digit_2_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:boxBackgroundMode="none"
+                android:layout_margin="0dp"
+                android:padding="0dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/digit_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:imeOptions="actionNext"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <Space
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            app:cardCornerRadius="5dp"
+            android:id="@+id/digit_3_card"
+            android:backgroundTint="@color/lightgray"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/lightCyan"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/digit_3_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:boxBackgroundMode="none"
+                android:layout_margin="0dp"
+                android:padding="0dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/digit_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:imeOptions="actionNext"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <Space
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            app:cardCornerRadius="5dp"
+            android:id="@+id/digit_4_card"
+            android:backgroundTint="@color/lightgray"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/lightCyan"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/digit_4_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:boxBackgroundMode="none"
+                android:layout_margin="0dp"
+                android:padding="0dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/digit_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/verify_button"
+        android:layout_width="360dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginEnd="162dp"
+        android:text="Verify"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/buttonBlack"
+        app:circularflow_defaultRadius="0dp"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/otp_code"
+        android:layout_marginTop="60dp">
+    </com.google.android.material.button.MaterialButton>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

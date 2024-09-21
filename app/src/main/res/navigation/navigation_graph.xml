@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/welcome_Screen">
+
+    <fragment
+        android:id="@+id/welcome_Screen"
+        android:name="com.example.mvvm2.features.homeScreen.WelcomeScreenFragment"
+        android:label="fragment_welcome__screen"
+        tools:layout="@layout/fragment_welcome__screen" >
+        <action
+            android:id="@+id/action_goto_login"
+            app:destination="@id/login"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/welcome_Screen" />
+        <action
+            android:id="@+id/action_goto_register"
+            app:destination="@id/register"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/welcome_Screen" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.mvvm2.features.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_forgotPassword"
+            app:destination="@id/forgotPassword"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/login" />
+        <action
+            android:id="@+id/action_login_to_articleList"
+            app:destination="@id/articleList"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_login_to_welcome_Screen"
+            app:destination="@id/welcome_Screen"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/login" />
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/register"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/register"
+        android:name="com.example.mvvm2.features.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_register_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_register_to_welcome_Screen"
+            app:destination="@id/welcome_Screen"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/register" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPassword"
+        android:name="com.example.mvvm2.features.forgotPassword.ForgotPasswordFragment"
+        android:label="fragment_forgot_password">
+        <action
+            android:id="@+id/action_forgotPassword_to_otp2"
+            app:destination="@id/otp2"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/forgotPassword" />
+        <action
+            android:id="@+id/action_forgotPassword_to_login"
+            app:destination="@id/login"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/forgotPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/otp2"
+        android:name="com.example.mvvm2.features.forgotPassword.OtpFragment"
+        android:label="otp" >
+
+        <argument
+            android:name="Email"
+            app:argType="string"
+            android:defaultValue=" "/>
+
+        <action
+            android:id="@+id/action_otp2_to_newPass"
+            app:destination="@id/newPass"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/otp2" />
+        <action
+            android:id="@+id/action_otp2_to_forgotPassword"
+            app:destination="@id/forgotPassword"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/otp2" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPass"
+        android:name="com.example.mvvm2.features.forgotPassword.NewPasswordFragment"
+        android:label="fragment_new_pass"
+        tools:layout="@layout/fragment_new_pass" >
+
+        <argument
+            android:name="Email"
+            app:argType="string"
+            android:defaultValue=" "/>
+        <action
+            android:id="@+id/action_newPass_to_passChanged"
+            app:destination="@id/passChanged"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@animator/nav_default_pop_enter_anim"
+            app:popExitAnim="@animator/nav_default_pop_exit_anim"
+            app:popUpTo="@id/newPass" />
+        <action
+            android:id="@+id/action_newPass_to_otp2"
+            app:destination="@id/otp2"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/newPass" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleList"
+        android:name="com.example.mvvm2.features.articles.ui.ArticleListFragment"
+        android:label="ArticleList">
+
+        <argument
+            android:name="Email"
+            app:argType="string"
+            android:defaultValue=" "/>
+
+
+
+        <action
+            android:id="@+id/action_articleList_to_articleDetails"
+            app:destination="@id/articleDetails"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/articleList"
+
+            >
+
+
+        </action>
+
+        <action
+            android:id="@+id/action_list_to_login"
+            app:destination="@id/login"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/articleList"
+            />
+
+    </fragment>
+    <fragment
+        android:id="@+id/passChanged"
+        android:name="com.example.mvvm2.features.forgotPassword.PasswordChangeSuccessFragment"
+        android:label="passChanged" >
+        <action
+            android:id="@+id/changedToLogin"
+            app:destination="@id/login"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleDetails"
+        android:name="com.example.mvvm2.features.articles.ui.ArticleDetailsFragment"
+        android:label="ArticleDetails" >
+
+        <argument
+            android:name="article"
+            app:argType="string"
+            android:defaultValue=" "/>
+        <argument
+            android:name="description"
+            app:argType="string"
+            android:defaultValue=" "/>
+        <argument
+            android:name="image"
+            app:argType="string"
+            android:defaultValue=" "/>
+        <argument
+            android:name="url"
+            app:argType="string"
+            android:defaultValue=" "/>
+        <action
+            android:id="@+id/action_articleDetails_to_articleList"
+            app:destination="@id/articleList"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/articleDetails" />
+        <action
+            android:id="@+id/action_articleDetails_to_webActivity"
+            app:destination="@id/webActivity"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/articleDetails" />
+    </fragment>
+    <fragment
+
+        android:id="@+id/webActivity"
+        android:name="com.example.mvvm2.features.articles.WebActivityFragment"
+        android:label="fragment_web_activity"
+        tools:layout="@layout/fragment_web_activity" >
+
+    <argument
+        android:name="url"
+        app:argType="string"
+        android:defaultValue=" "/>
+
+    </fragment>
+
+
+
+</navigation>

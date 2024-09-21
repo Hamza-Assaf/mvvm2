@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="355dp"
+    android:layout_height="125dp"
+    app:cardCornerRadius="5dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:id="@+id/movie_card"
+    android:layout_margin="10dp"
+    android:backgroundTint="@color/lightgray"
+    app:strokeWidth="2dp"
+    app:strokeColor="@color/gray">
+
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/card_image"
+        android:id="@+id/article_image"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Article Title"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/darkGray"
+        android:id="@+id/article_title"
+        android:maxLines="1"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brief description about movie"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/darkGray"
+        android:id="@+id/article_description"
+        android:maxLines="2"/>
+
+</androidx.cardview.widget.CardView>

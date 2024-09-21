@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="features.homeScreen.WelcomeScreenFragment"
+    android:id="@+id/welcome_screen"
+    tools:ignore="HardcodedText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOGIN &amp; PASSWORD"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="68dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@+id/login_register_text"/>
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            app:layout_constraintTop_toBottomOf="@+id/login_register_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/card_image"
+            android:layout_marginTop="40dp"
+            android:id="@+id/veri_image"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="355dp"
+            android:layout_height="56dp"
+            android:backgroundTint="@color/buttonBlack"
+            android:text="Login"
+            app:layout_constraintTop_toBottomOf="@+id/veri_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="60dp"
+            app:cornerRadius="5dp"
+            android:id="@+id/login_page_button"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="355dp"
+            android:layout_height="56dp"
+            android:backgroundTint="@color/white"
+            android:text="Register"
+            app:layout_constraintTop_toBottomOf="@+id/login_page_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            app:cornerRadius="5dp"
+            android:id="@+id/register_button"
+            android:textColor="@color/black"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/darkGray"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
