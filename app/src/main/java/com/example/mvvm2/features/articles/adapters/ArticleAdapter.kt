@@ -4,7 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.mvvm2.databinding.FragmentArticleDetailsBinding
+import com.example.mvvm2.databinding.ArticleCardBinding
+
 import com.example.mvvm2.features.model.ArticleModel
 
 class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
@@ -18,7 +19,7 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = FragmentArticleDetailsBinding.inflate(inflater, parent, false)
+        val binding = ArticleCardBinding.inflate(inflater, parent, false)
         return ArticleViewHolder(binding)
     }
 
@@ -26,7 +27,7 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() 
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
 
-        val article = articles[position]
+        val article  = articles[position]
         holder.binding.articleTitle.text = article.title
         holder.binding.articleDescription.text = article.description
         Glide.with(holder.itemView.context).load(article.urlToImage)
@@ -39,8 +40,10 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() 
     }
 
 
-    class ArticleViewHolder(val binding: FragmentArticleDetailsBinding) :
-        RecyclerView.ViewHolder(binding.root)
+    class ArticleViewHolder ( val binding: ArticleCardBinding): RecyclerView.ViewHolder( binding.root)
 
 
-}
+
+    }
+
+

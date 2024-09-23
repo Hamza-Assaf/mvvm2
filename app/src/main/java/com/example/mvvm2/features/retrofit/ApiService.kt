@@ -10,6 +10,7 @@ import retrofit2.http.Query
 
 interface ApiService {
 
+
     @GET("top-headlines")
     fun getLatestNews(@Query("sources") source: String?, @Query("apiKey") apiKey: String?): Call<ResponseModel>
 

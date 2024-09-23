@@ -8,10 +8,10 @@ data class SourceModel (
 
 
     @SerializedName ("id")
-    private  var sourceId : String,
+    private  var Id : String,
 
     @SerializedName("name")
-    private  var sourceName : String
+    private  var name : String
 
 
 )

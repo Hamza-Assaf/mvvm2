@@ -12,20 +12,23 @@ import retrofit2.Response
 
 class ArticleViewModel(private val repository: ArticleRepository) : ViewModel() {
 
-   val  apiService = ApiService.getInstance()
-    val apiKey = "f391df4c366b4be0b0a7e303c92bd5c4"
+//   private val  apiService = ApiService.getInstance()
     var articleList = MutableLiveData<List<ArticleModel>>()
     val errorMessage = MutableLiveData<String>()
-    val call: Call<ResponseModel> = apiService.getLatestNews("techcrunch", apiKey)
+//     private val myRepo = ArticleRepository(apiService)
 
+    private val call: Call<ResponseModel> = repository.getLatestNews()
 
     fun getTopHeadLines() {
+
+        //repo is not being used
+
 
         call.enqueue(object : Callback<ResponseModel> {
             override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
 
                 if (response.isSuccessful) {
-                    articleList.postValue(response.body()?.articles)
+                    articleList.postValue( response.body()?.articles)
 
 
                 } else {
@@ -39,6 +42,7 @@ class ArticleViewModel(private val repository: ArticleRepository) : ViewModel() 
             }
         })
     }
+
 }
 
 
