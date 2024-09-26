@@ -2,32 +2,34 @@ package com.example.mvvm2.features.articles.ui
 
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import com.example.mvvm2.databinding.FragmentArticleListBinding
 import com.example.mvvm2.features.ArticleViewModel
-import com.example.mvvm2.features.ViewModelFactory
 import com.example.mvvm2.features.articles.adapters.ArticleAdapter
 import com.example.mvvm2.features.articles.ui.ArticleListFragmentDirections.Companion.actionListToLogin
 import com.example.mvvm2.features.database.DataBaseHelper
-import com.example.mvvm2.features.repository.ArticleRepository
-import com.example.mvvm2.features.retrofit.ApiService
+import com.example.mvvm2.features.model.topNews.TopNewsResponseModel
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 
-
+@AndroidEntryPoint
 class ArticleListFragment : Fragment() {
 
-    private val apiService = ApiService.getInstance()
     private lateinit var binding: FragmentArticleListBinding
-    private val TAG = "ArticleListFragment"
     private val adapter = ArticleAdapter()
-    private val viewModel: ArticleViewModel  by viewModels<ArticleViewModel>(factoryProducer = {ViewModelFactory(ArticleRepository(apiService))})
+    private val viewModel = ViewModelProvider(this)[ArticleViewModel::class.java]
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,10 +38,8 @@ class ArticleListFragment : Fragment() {
     ): View {
 
 
-
         binding = FragmentArticleListBinding.inflate(layoutInflater)
         binding.movieRv.adapter = adapter
-
 
 
         val db = Room.databaseBuilder(binding.root.context, DataBaseHelper::class.java, "users")
@@ -56,23 +56,13 @@ class ArticleListFragment : Fragment() {
 
         }
 
-        viewModel.articleList.observe(viewLifecycleOwner, Observer {
-            Log.d(TAG, "onCreate: $it")
+    viewModel.getTopHeadLines()
 
-
-            adapter.setArticleList(it)
-        })
-        viewModel.errorMessage.observe(viewLifecycleOwner, Observer {
-
-        })
-
-        viewModel.getTopHeadLines()
 
         return binding.root
+
     }
-
 }
-
 
 
 

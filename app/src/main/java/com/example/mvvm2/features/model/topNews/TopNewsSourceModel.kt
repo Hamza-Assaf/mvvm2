@@ -1,14 +1,14 @@
-package com.example.mvvm2.features.model
+package com.example.mvvm2.features.model.topNews
 
 import com.google.gson.annotations.SerializedName
 
-data class SourceModel (
+data class TopNewsSourceModel (
 
 
 
 
     @SerializedName ("id")
-    private  var Id : String,
+    private  var id : String,
 
     @SerializedName("name")
     private  var name : String

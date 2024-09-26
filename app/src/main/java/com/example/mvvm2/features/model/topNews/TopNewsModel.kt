@@ -1,33 +1,33 @@
-package com.example.mvvm2.features.model
+package com.example.mvvm2.features.model.topNews
 
 import com.google.gson.annotations.SerializedName
 
-data class ArticleModel(
+data class TopNewsModel(
 
 
     @SerializedName("source")
-    val source: SourceModel,
+    var source: TopNewsSourceModel,
 
     @SerializedName("author")
-    val author: String,
+    var author: String,
 
     @SerializedName("title")
-    val title: String,
+    var title: String,
 
     @SerializedName("description")
-    val description: String,
+    var description: String,
 
     @SerializedName("url")
-    val url: String,
+    var url: String,
 
     @SerializedName("urlToImage")
-    val urlToImage: String,
+    var urlToImage: String,
 
     @SerializedName("publishedAt")
-    val publishedAt: String,
+    var publishedAt: String,
 
     @SerializedName("content")
-    val content: String
+    var content: String
 
 
 )

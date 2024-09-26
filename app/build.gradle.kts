@@ -2,7 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("androidx.navigation.safeargs.kotlin")
-    id("com.google.devtools.ksp") version "2.0.20-1.0.24"
+    id("com.google.devtools.ksp")
+    id ("dagger.hilt.android.plugin")
 
 
 }
@@ -67,7 +68,6 @@ dependencies {
     implementation (libs.kotlinx.coroutines.rx2)
 
     //room
-    val room_version = "2.6.1"
     annotationProcessor(libs.androidx.room.compiler)
     implementation (libs.androidx.room.runtime)
     implementation (libs.androidx.room.common)
@@ -77,7 +77,7 @@ dependencies {
     implementation (libs.androidx.room.guava)
     implementation (libs.androidx.room.testing)
     implementation (libs.androidx.room.paging)
-    ksp("androidx.room:room-compiler:$room_version")
+    ksp(libs.androidx.room.compiler)
 
 
     //glide
@@ -94,7 +94,6 @@ dependencies {
     implementation (libs.converter.gson)
     implementation (libs.gson)
 
-    val lifecycle_version = "2.8.6"
 
 
     // ViewModel
@@ -102,6 +101,13 @@ dependencies {
 
 // LiveData
     implementation(libs.androidx.lifecycle.livedata.ktx)
+
+    //dagger - hilt
+    implementation(libs.hilt.android.v2511)
+    ksp(libs.hilt.android.compiler)
+
+
+
 
 
 
