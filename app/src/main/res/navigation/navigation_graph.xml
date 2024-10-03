@@ -235,7 +235,7 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/articleDetails" />
         <action
-            android:id="@+id/action_articleDetails_to_webActivity"
+            android:id="@+id/action_details_to_web"
             app:destination="@id/webActivity"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"

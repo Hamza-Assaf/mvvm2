@@ -22,8 +22,7 @@ class WebActivityFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = FragmentWebActivityBinding.inflate(layoutInflater)
-
+binding = FragmentWebActivityBinding.inflate(layoutInflater)
 
 
 

@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.devtools.ksp")
-    id ("dagger.hilt.android.plugin")
+    id("com.google.dagger.hilt.android")
 
 
 }
@@ -103,17 +103,11 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
 
     //dagger - hilt
-    implementation(libs.hilt.android.v2511)
-    ksp(libs.hilt.android.compiler)
+    val hilt = "2.50"
+    implementation("com.google.dagger:hilt-android:$hilt")
+    ksp("com.google.dagger:hilt-compiler:$hilt")
 
-
-
-
-
-
-
-
-
-
+    //WebView
+    implementation("androidx.webkit:webkit:1.12.1")
 
 }

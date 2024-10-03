@@ -8,8 +8,13 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.mvvm2.databinding.FragmentArticleDetailsBinding
-import com.example.mvvm2.features.articles.ui.ArticleDetailsFragmentDirections
 import com.example.mvvm2.features.articles.ui.ArticleDetailsFragmentDirections.Companion.actionArticleDetailsToArticleList
+import com.example.mvvm2.features.articles.ui.ArticleDetailsFragmentDirections.Companion.actionDetailsToWeb
+
+
+
+
+
 
 
 
@@ -46,7 +51,7 @@ class ArticleDetailsFragment : Fragment() {
 
         binding.articleImage.setOnClickListener {
 
-            val toItem = ArticleDetailsFragmentDirections.actionArticleDetailsToWebActivity( url.toString())
+            val toItem = actionDetailsToWeb( url.toString())
 
             findNavController().navigate(toItem)
         }
