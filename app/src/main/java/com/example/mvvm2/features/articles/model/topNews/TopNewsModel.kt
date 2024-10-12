@@ -1,4 +1,4 @@
-package com.example.mvvm2.features.model.topNews
+package com.example.mvvm2.features.articles.model.topNews
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,6 +1,5 @@
 package com.example.mvvm2.features.articles.ui
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,61 +7,39 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.Room
-import com.example.mvvm2.databinding.FragmentArticleListBinding
+import com.example.mvvm2.databinding.FragmentEverythingListBinding
 import com.example.mvvm2.features.articles.adapters.ArticleAdapter
-import com.example.mvvm2.features.articles.ui.ArticleListFragmentDirections.Companion.actionListToLogin
-import com.example.mvvm2.features.database.DataBaseHelper
 import com.example.mvvm2.features.articles.model.topNews.TopNewsModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class ArticleListFragment : Fragment() {
+class EverythingListFragment : Fragment() {
 
 
-    private lateinit var binding: FragmentArticleListBinding
+    lateinit var binding: FragmentEverythingListBinding
     private val adapter = ArticleAdapter()
     private val viewModel : ArticleViewModel by viewModels()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-
     ): View {
-        binding = FragmentArticleListBinding.inflate(layoutInflater)
+binding = FragmentEverythingListBinding.inflate(layoutInflater)
         binding.movieRv.adapter = adapter
         binding.movieRv.layoutManager = LinearLayoutManager(requireContext())
 
-
-viewModel.getTopHeadLines()
+       viewModel.getEverything()
 
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.topNewsresponse.collect {
+            viewModel.allNewsresponse.collect {
                 adapter.setArticles(it.articles as List<TopNewsModel>)
             }
         }
 
-
-
-
-
-
         return binding.root
+    }
+
 
     }
-}
-
-
-
-
-
-
-
-
-
-

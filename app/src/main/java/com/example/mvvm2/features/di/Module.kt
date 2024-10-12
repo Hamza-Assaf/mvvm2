@@ -1,10 +1,9 @@
 package com.example.mvvm2.features.di
 
 import com.example.mvvm2.features.utils.Constants.Companion.baseUrl
-import com.example.mvvm2.features.data.remote.ApiService
+import com.example.mvvm2.features.articles.model.ApiService
 import com.example.mvvm2.features.domain.repository.RepoImpl
 import com.example.mvvm2.features.domain.repository.Repository
-import com.example.mvvm2.features.model.RemoteDataSource
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

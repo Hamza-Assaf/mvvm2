@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.ViewPagerFragment"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+
+    <include layout="@layout/back_button"
+        android:id="@+id/back_button"/>
+
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:text="welcome abd al rahman"
+        android:textSize="20sp">
+
+    </TextView>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+
+</LinearLayout>

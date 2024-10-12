@@ -8,17 +8,15 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
-import com.example.mvvm2.features.database.DataBaseHelper
 import com.example.mvvm2.databinding.FragmentLoginBinding
+import com.example.mvvm2.features.database.DataBaseHelper
 import com.example.mvvm2.features.login.LoginFragmentDirections.Companion.actionLoginToForgotPassword
 import com.example.mvvm2.features.login.LoginFragmentDirections.Companion.actionLoginToRegister
 import com.example.mvvm2.features.login.LoginFragmentDirections.Companion.actionLoginToWelcomeScreen
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import com.example.mvvm2.features.login.LoginFragmentDirections.Companion.actionLoginToArticleList
-
-
+import com.example.mvvm2.features.login.LoginFragmentDirections.Companion.actionLoginToViewPagerFragment
 
 
 class LoginFragment : Fragment() {
@@ -61,7 +59,7 @@ class LoginFragment : Fragment() {
                     Toast.makeText(binding.root.context, "Login Successful", Toast.LENGTH_SHORT)
                         .show()
 
-                    val action = actionLoginToArticleList(binding.email.text.toString())
+                    val action = actionLoginToViewPagerFragment(binding.email.text.toString())
                     findNavController().navigate(action)
 
                 } else if (binding.email.text.toString()
@@ -84,14 +82,6 @@ class LoginFragment : Fragment() {
 
                 }
             }
-
-
-
-
-
-
-
-
 
         binding.backButton.backButton.setOnClickListener{
 

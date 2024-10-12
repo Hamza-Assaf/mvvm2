@@ -32,6 +32,7 @@
         android:name="com.example.mvvm2.features.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
+
         <action
             android:id="@+id/action_login_to_forgotPassword"
             app:destination="@id/forgotPassword"
@@ -63,6 +64,16 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/login" />
+        <action
+            android:id="@+id/action_login_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@animator/nav_default_pop_exit_anim" />
+
+
+
     </fragment>
     <fragment
         android:id="@+id/register"
@@ -256,7 +267,37 @@
         android:defaultValue=" "/>
 
     </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.example.mvvm2.features.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" >
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue=" "/>
+        <action
+            android:id="@+id/action_viewPagerFragment_to_articleList"
+            app:destination="@id/articleList" />
 
+        <action
+            android:id="@+id/action_viewPagerFragment_to_everythingListFragment"
+            app:destination="@id/everythingListFragment" />
+
+        <action
+            android:id="@+id/action_viewPagerFragment_to_articleDetails"
+            app:destination="@id/articleDetails" />
+    </fragment>
+    <fragment
+
+        android:id="@+id/everythingListFragment"
+        android:name="com.example.mvvm2.features.articles.ui.EverythingListFragment"
+        android:label="EverythingListFragment" >
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue=" "/>
+    </fragment>
 
 
 </navigation>
